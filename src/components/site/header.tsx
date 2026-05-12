@@ -56,43 +56,43 @@ export function Header() {
     <>
       {/* ───── Social Proof Bar ───── */}
       <div className="hidden lg:block bg-[var(--color-bg-secondary)] border-b border-[var(--color-border)]">
-        <div className="container-page flex items-center justify-between h-10">
-          {/* Safe & Secure */}
-          <div className="flex items-center gap-2">
-            <Shield className="h-4 w-4 text-[var(--color-primary)]" />
-            <div className="flex items-center gap-1.5">
-              <span className="text-xs font-bold tracking-wide text-[var(--color-primary)]">
+        <div className="container-page flex items-center justify-between h-12">
+          {/* Safe & Secure — two rows */}
+          <div className="flex items-center gap-2.5">
+            <Shield className="h-5 w-5 text-[var(--color-primary)]" />
+            <div className="flex flex-col">
+              <span className="text-[13px] font-bold tracking-wide text-[var(--color-primary)] leading-tight">
                 SAFE &amp; SECURE
               </span>
-              <span className="text-xs text-[var(--color-fg-muted)]">
+              <span className="text-[12px] text-[var(--color-fg-muted)] leading-tight">
                 100% secure and 24h support
               </span>
             </div>
           </div>
 
           {/* Trustpilot */}
-          <div className="flex items-center gap-2">
-            <span className="text-xs font-semibold text-[var(--color-fg)]">
+          <div className="flex items-center gap-2.5">
+            <span className="text-[13px] font-semibold text-[var(--color-fg)]">
               Excellent
             </span>
             <TrustpilotStars />
-            <span className="text-xs text-[var(--color-fg-muted)]">
+            <span className="text-[12px] text-[var(--color-fg-muted)]">
               4.8 out of 5 based on{" "}
               <span className="underline">221,545 reviews</span>
             </span>
-            <span className="text-xs text-[var(--color-fg-muted)]">
+            <span className="text-[12px] text-[var(--color-fg-muted)]">
               ★ Trustpilot
             </span>
           </div>
 
-          {/* Super Fast */}
-          <div className="flex items-center gap-2">
-            <Zap className="h-4 w-4 text-[var(--color-primary)]" />
-            <div className="flex items-center gap-1.5">
-              <span className="text-xs font-bold tracking-wide text-[var(--color-primary)]">
+          {/* Super Fast — two rows */}
+          <div className="flex items-center gap-2.5">
+            <Zap className="h-5 w-5 text-[var(--color-primary)]" />
+            <div className="flex flex-col">
+              <span className="text-[13px] font-bold tracking-wide text-[var(--color-primary)] leading-tight">
                 SUPER FAST
               </span>
-              <span className="text-xs text-[var(--color-fg-muted)]">
+              <span className="text-[12px] text-[var(--color-fg-muted)] leading-tight">
                 Instant Digital Download
               </span>
             </div>
@@ -101,10 +101,10 @@ export function Header() {
       </div>
 
       {/* ───── Desktop + Mobile Header ───── */}
-      <header className="sticky top-0 z-50 bg-[var(--color-bg)]">
+      <header className="sticky top-0 z-50 bg-[var(--color-bg-secondary)]">
         <div className="container-page">
           {/* Desktop top row */}
-          <div className="hidden lg:flex h-[60px] items-center gap-4">
+          <div className="hidden lg:flex h-[64px] items-center gap-4">
             {/* Logo */}
             <Link href="/" className="flex items-center shrink-0">
               <Image
@@ -120,27 +120,27 @@ export function Header() {
             {/* Search bar — wider, centered */}
             <div className="flex-1 max-w-[600px] mx-auto">
               <div className="flex items-center gap-2 rounded-full bg-[var(--color-bg-secondary)] border border-[var(--color-border-strong)] px-4 py-2">
-                <Search className="h-4 w-4 text-[var(--color-fg-muted)] shrink-0" />
+                <Search className="h-[18px] w-[18px] text-[var(--color-fg-muted)] shrink-0" />
                 <input
                   type="text"
                   placeholder="Search for games, gift cards and more"
-                  className="bg-transparent text-sm text-[var(--color-fg)] placeholder:text-[var(--color-fg-muted)] outline-none w-full"
+                  className="bg-transparent text-[16px] text-[var(--color-fg)] placeholder:text-[var(--color-fg-muted)] outline-none w-full"
                 />
               </div>
             </div>
 
             {/* Right actions */}
             <div className="flex items-center gap-3 shrink-0">
-              <button className="flex items-center gap-1.5 text-sm text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] transition-colors">
-                <span className="text-base">🇺🇸</span>
-                <span className="text-xs">USD &bull; English</span>
+              <button className="flex items-center gap-1.5 text-[16px] text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] transition-colors">
+                <span className="text-lg">🇺🇸</span>
+                <span className="text-[14px]">USD &bull; English</span>
               </button>
-              <button className="p-2 rounded-lg hover:bg-[var(--color-bg-secondary)] transition-colors">
-                <ShoppingCart className="h-5 w-5 text-[var(--color-fg-muted)]" />
+              <button className="p-2 rounded-lg hover:bg-[var(--color-bg-tertiary)] transition-colors">
+                <ShoppingCart className="h-[22px] w-[22px] text-[var(--color-fg-muted)]" />
               </button>
-              <button className="p-2 rounded-lg hover:bg-[var(--color-bg-secondary)] transition-colors">
+              <button className="p-2 rounded-lg hover:bg-[var(--color-bg-tertiary)] transition-colors">
                 <svg
-                  className="h-5 w-5 text-[var(--color-fg-muted)]"
+                  className="h-[22px] w-[22px] text-[var(--color-fg-muted)]"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -152,7 +152,7 @@ export function Header() {
               </button>
               <Link
                 href="#"
-                className="bg-[var(--color-purple)] hover:bg-[var(--color-purple-deep)] text-white text-sm font-semibold px-5 py-2 rounded-lg transition-colors"
+                className="bg-[var(--color-purple)] hover:bg-[var(--color-purple-deep)] text-white text-[16px] font-semibold px-6 py-2.5 rounded-lg transition-colors"
               >
                 Login
               </Link>
@@ -160,31 +160,31 @@ export function Header() {
           </div>
         </div>
 
-        {/* Desktop navigation row — darker bg with top border */}
-        <div className="hidden lg:block bg-[var(--color-bg-secondary)] border-t border-b border-[var(--color-border)]">
-          <nav className="container-page flex items-center justify-center gap-0.5 h-10 overflow-x-auto scrollbar-none">
+        {/* Desktop navigation row — subtle divider */}
+        <div className="hidden lg:block bg-[var(--color-bg-secondary)] border-t border-[var(--color-border-strong)]/30">
+          <nav className="container-page flex items-center justify-center gap-0.5 h-11 overflow-x-auto scrollbar-none">
             {navLinks.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}
-                className="flex items-center gap-1 px-3 py-2 text-[13px] text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] whitespace-nowrap transition-colors"
+                className="flex items-center gap-1 px-3 py-2 text-[15px] text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] whitespace-nowrap transition-colors"
               >
                 {link.label}
                 {link.hasDropdown && (
-                  <ChevronDown className="h-3 w-3 opacity-60" />
+                  <ChevronDown className="h-3.5 w-3.5 opacity-60" />
                 )}
               </Link>
             ))}
             <Link
               href="#"
-              className="flex items-center gap-1 px-3 py-2 text-[13px] whitespace-nowrap transition-colors"
+              className="flex items-center gap-1 px-3 py-2 text-[15px] whitespace-nowrap transition-colors"
             >
               Save with{" "}
               <span className="text-[var(--color-purple)] font-bold">plus</span>
             </Link>
             <Link
               href="#"
-              className="flex items-center gap-1 px-3 py-2 text-[13px] text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] whitespace-nowrap transition-colors"
+              className="flex items-center gap-1 px-3 py-2 text-[15px] text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] whitespace-nowrap transition-colors"
             >
               Explore eSIMs 📱
             </Link>
