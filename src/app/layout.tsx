@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Onest } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/site/header";
-import { Footer } from "@/components/site/footer";
 
 const onest = Onest({
   variable: "--font-onest",
@@ -32,10 +31,9 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${onest.variable} h-full antialiased`}>
-      <body className="relative min-h-full flex flex-col">
+      <body className="relative min-h-full flex flex-col pb-14 lg:pb-0">
         <Header />
         <main className="relative z-10 flex-1">{children}</main>
-        <Footer />
       </body>
     </html>
   );
