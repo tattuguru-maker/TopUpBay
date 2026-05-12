@@ -126,6 +126,14 @@ html, body {
   }
 }
 
+@utility scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 /* Focus rings */
 :where(button, a, input, select, textarea):focus-visible {
   outline: 2px solid var(--color-primary);
