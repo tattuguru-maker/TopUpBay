@@ -167,58 +167,71 @@ export function RecentlyViewed() {
             <a
               key={product.id}
               href="#"
-              className="group flex-shrink-0 w-[170px] sm:w-[200px] lg:w-[220px]"
+              className="group flex-shrink-0 w-[170px] sm:w-[190px] lg:w-[210px] rounded-2xl bg-[var(--color-bg-secondary)] overflow-hidden border border-[var(--color-border)] hover:border-[var(--color-border-strong)] transition-colors"
             >
               {/* Image */}
-              <div className="relative aspect-[4/3] rounded-xl overflow-hidden bg-[var(--color-bg-secondary)] mb-2">
+              <div className="relative aspect-[3/4] overflow-hidden">
                 <Image
                   src={product.image}
                   alt={product.name}
                   fill
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
-                  sizes="220px"
+                  sizes="210px"
                 />
               </div>
 
-              {/* Title */}
-              <h3 className="text-sm font-medium text-[var(--color-fg)] line-clamp-2 mb-1 group-hover:text-[var(--color-primary)] transition-colors leading-tight">
-                {product.name}
-              </h3>
+              {/* Content */}
+              <div className="p-3 flex flex-col gap-1.5">
+                {/* Title */}
+                <h3 className="text-[13px] font-medium text-[var(--color-fg)] line-clamp-2 leading-snug group-hover:text-[var(--color-primary)] transition-colors">
+                  {product.name}
+                </h3>
 
-              {/* Region */}
-              <span className="text-[11px] font-semibold tracking-wider text-[var(--color-fg-muted)] uppercase">
-                {product.region}
-              </span>
+                {/* Region */}
+                <span className="text-[11px] font-bold tracking-wider text-[var(--color-green)] uppercase">
+                  {product.region}
+                </span>
 
-              {/* Price badge */}
-              <div className="mt-1.5 flex items-center gap-2">
-                <span className="inline-flex items-center gap-1 bg-[var(--color-pink)] text-white text-xs font-semibold px-2.5 py-1 rounded-md">
-                  <svg
-                    className="h-3 w-3"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                  >
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.31-8.86c-1.77-.45-2.34-.94-2.34-1.67 0-.84.79-1.43 2.1-1.43 1.38 0 1.9.66 1.94 1.64h1.71c-.05-1.34-.87-2.57-2.49-2.97V5H11.5v1.69c-1.51.32-2.72 1.3-2.72 2.81 0 1.79 1.49 2.69 3.66 3.21 1.95.46 2.34 1.15 2.34 1.87 0 .53-.39 1.39-2.1 1.39-1.6 0-2.23-.72-2.32-1.64H8.65c.09 1.71 1.37 2.66 2.85 2.97V19h1.72v-1.67c1.52-.29 2.72-1.16 2.72-2.74 0-2.2-1.88-2.95-3.63-3.45z" />
-                  </svg>
-                  from {product.currency}
-                  {product.fromPrice.toFixed(2)}
-                </span>
-              </div>
-
-              {/* Price row */}
-              <div className="mt-1 flex items-baseline gap-2">
-                <span className="text-xs text-[var(--color-fg-muted)]">
-                  from
-                </span>
-                <span className="text-base font-bold text-[var(--color-fg)]">
-                  {product.currency}
-                  {product.price.toFixed(2)}
-                </span>
-                {product.discount && (
-                  <span className="text-xs font-semibold text-[var(--color-pink)] bg-[var(--color-pink)]/10 px-1.5 py-0.5 rounded">
-                    -{product.discount}%
+                {/* Price badge */}
+                <div className="flex">
+                  <span className="inline-flex items-center gap-1.5 bg-[var(--color-purple-deep)] text-white text-[12px] font-semibold pl-2 pr-3 py-1.5 rounded-lg">
+                    <svg
+                      className="h-4 w-4 shrink-0"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <circle cx="12" cy="12" r="10" />
+                      <text
+                        x="12"
+                        y="16"
+                        textAnchor="middle"
+                        fill="white"
+                        fontSize="12"
+                        fontWeight="bold"
+                      >
+                        P
+                      </text>
+                    </svg>
+                    from {product.currency}
+                    {product.fromPrice.toFixed(2)}
                   </span>
-                )}
+                </div>
+
+                {/* Price row */}
+                <div className="flex items-baseline gap-2">
+                  <span className="text-[11px] text-[var(--color-fg-muted)]">
+                    from
+                  </span>
+                  <span className="text-[18px] font-bold text-[var(--color-fg)]">
+                    {product.currency}
+                    {product.price.toFixed(2)}
+                  </span>
+                  {product.discount && (
+                    <span className="text-[11px] font-bold text-white bg-[var(--color-pink)] px-1.5 py-0.5 rounded">
+                      -{product.discount}%
+                    </span>
+                  )}
+                </div>
               </div>
             </a>
           ))}
